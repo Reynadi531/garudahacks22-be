@@ -1,0 +1,18 @@
+version: '3'
+services:
+  gh-mysql:
+    image: mysql:latest
+    environment:
+      MYSQL_DATABASE: 'db'
+      MYSQL_USER: 'user'
+      MYSQL_PASSWORD: 'password'
+      MYSQL_ROOT_PASSWORD: 'password'
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
+    volumes:
+      - gh-mysql:/var/lib/mysql
+
+volumes:
+  gh-mysql:
